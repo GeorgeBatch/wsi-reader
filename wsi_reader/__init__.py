@@ -30,7 +30,7 @@ def get_wsi_reader(slide_path: Union[PathLike, str]) -> Optional[Type[WSIReader]
 
         return IsyntaxReader
 
-    with open(slide_path, "r") as fh:
+    with open(slide_path, "rb") as fh:
         header = fh.read(2)
         if header in {b"II", b"MM", b"EP"}:
             from .tifffile_backend import TiffReader
