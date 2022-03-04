@@ -3,10 +3,11 @@ import numpy as np
 
 from os import PathLike
 from pathlib import Path
+from typing import List, Optional, Tuple, Union
+
 from pixelengine import PixelEngine
 from softwarerendercontext import SoftwareRenderContext
 from softwarerenderbackend import SoftwareRenderBackend
-from typing import List, Optional, Tuple, Union
 
 from .base import WSIReader
 
@@ -32,8 +33,7 @@ class IsyntaxReader(WSIReader):
         cache_path = Path(cache_path) if cache_path else slide_path.with_suffix(".fic")
         container_name = (
             "caching-ficom"
-            if cache_path is None
-            or cache_path.is_file()
+            if cache_path.is_file()
             or (
                 cache_path.is_dir()
                 and (cache_path / slide_path.with_suffix(".fic").stem).exists()
@@ -47,6 +47,7 @@ class IsyntaxReader(WSIReader):
             )
             else "ficom"
         )
+        #self._pe = PixelEngine(Gles3RenderBackend(), EglRenderContext())
         self._pe = PixelEngine(SoftwareRenderBackend(), SoftwareRenderContext())
         self._pe["in"].open(str(slide_path), container_name, "r", str(cache_path))
         self._view = self._pe["in"]["WSI"].source_view
