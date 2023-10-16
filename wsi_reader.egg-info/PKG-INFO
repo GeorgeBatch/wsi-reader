@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: wsi-reader
+Version: 0.1
+Home-page: https://github.com/GeorgeBatch/wsi-reader
+Author: 
+Author-email: 
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: numpy>=1.19.2
+Requires-Dist: opencv-python>=4.5.3.56
+Provides-Extra: philips
+Requires-Dist: pixelengine>=3.1.3; extra == "philips"
+Requires-Dist: softwarerendercontext>=3.1.3; extra == "philips"
+Requires-Dist: softwarerendercontext>=3.1.3; extra == "philips"
+Provides-Extra: tifffile
+Requires-Dist: tifffile>=2021.10.12; extra == "tifffile"
+Requires-Dist: zarr>=2.10.1; extra == "tifffile"
+Provides-Extra: openslide
+Requires-Dist: openslide-python>=1.1.1; extra == "openslide"
