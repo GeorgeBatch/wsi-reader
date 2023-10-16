@@ -6,7 +6,7 @@ setup(
     description="",
     author="",
     author_email="",
-    url="https://github.com/stefano-malacrino/wsi-reader",
+    url="https://github.com/GeorgeBatch/wsi-reader",
     packages=["wsi_reader"],
     python_requires=">=3.6",
     install_requires=[
