@@ -11,7 +11,7 @@ setup(
     python_requires=">=3.6",
     install_requires=[
         "numpy>=1.19.2",
-        "opencv-python-headless>=4.5.3.56",
+        "opencv-python>=4.5.3.56",
     ],
     extras_require={
         "philips": [
