@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name="wsi-reader",
-    version="0.1",
+    version="0.1.1",
     description="",
     author="",
     author_email="",

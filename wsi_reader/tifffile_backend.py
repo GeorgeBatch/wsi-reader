@@ -56,7 +56,7 @@ class TiffReader(WSIReader):
         x, y = x_y
         tile_w, tile_h = tile_size
         return self._z[level][y : y + tile_h, x : x + tile_w], np.ones(
-            (tile_h, tile_w), np.bool
+            (tile_h, tile_w), bool
         )
 
     @property

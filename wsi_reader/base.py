@@ -78,7 +78,7 @@ class WSIReader(metaclass=abc.ABCMeta):
                 alfa_mask.astype(np.uint8),
                 (tile_w, tile_h),
                 interpolation=cv2.INTER_CUBIC,
-            ).astype(np.bool)
+            ).astype(bool)
 
         if normalize:
             tile = self._normalize(tile)
@@ -149,7 +149,7 @@ class WSIReader(metaclass=abc.ABCMeta):
             tile = cv2.resize(tile, tile_size, interpolation=cv2.INTER_CUBIC)
             alfa_mask = cv2.resize(
                 alfa_mask.astype(np.uint8), tile_size, interpolation=cv2.INTER_CUBIC
-            ).astype(np.bool)
+            ).astype(bool)
 
         if normalize:
             tile = self._normalize(tile)
